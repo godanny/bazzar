@@ -3,14 +3,15 @@ import { FormGroup } from '@angular/forms';
 import { FormGroupComponent } from './../../common/form-group/form-group.component';
 import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
-import { subCategoryForm } from '../../config/forms';
+import { listsForm } from '../../config/forms';
 
 @Component({
-  selector: 'baz-sub-category',
-  templateUrl: './sub-category.component.html',
-  styleUrls: ['./sub-category.component.styl']
+  selector: 'baz-lists',
+  templateUrl: './lists.component.html',
+  styleUrls: ['./lists.component.styl']
 })
-export class SubCategoryComponent implements OnInit {
+export class ListsComponent implements OnInit {
+
   @HostBinding( 'class.fxFlex' ) true;
 
   @ViewChild( FormGroupComponent )
@@ -22,7 +23,7 @@ export class SubCategoryComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.fields = subCategoryForm;
+    this.fields = listsForm;
   }
 
   doSubmit(): Promise<boolean> {
@@ -36,7 +37,7 @@ export class SubCategoryComponent implements OnInit {
   }
 
   goBack(): Promise<boolean> {
-    return this.router.navigate( [ 'category' ] );
+    return this.router.navigate( [ 'sub-category' ] );
   }
 
   private validateForm(): void {

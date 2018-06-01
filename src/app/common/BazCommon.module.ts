@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { FormFieldComponent } from './form-field/form-field.component';
 import { BazCheckboxComponent } from './form-field/checkbox/checkbox.component';
+import { DateComponent } from './date/date.component';
 
 import { BazErrorDirective } from './form-field/error.directive';
 import { BazInputDirective } from './form-field/input/input.directive';
@@ -27,7 +28,8 @@ import { BazInputDirective } from './form-field/input/input.directive';
     FormFieldComponent,
     BazInputDirective,
     BazErrorDirective,
-    BazCheckboxComponent
+    BazCheckboxComponent,
+    DateComponent
   ],
   exports: [
     HeaderComponent,
@@ -36,7 +38,8 @@ import { BazInputDirective } from './form-field/input/input.directive';
     FormFieldComponent,
     BazInputDirective,
     BazErrorDirective,
-    BazCheckboxComponent
+    BazCheckboxComponent,
+    DateComponent
   ]
 } )
 

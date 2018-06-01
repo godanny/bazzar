@@ -36,19 +36,19 @@
 
 
 
-      <!-- <ng-container *ngIf="field.control === 'date'">
+      <ng-container *ngIf="field.control === 'date'">
         <baz-date [name]="field.id" [group]="formInstance">
           <baz-form-field>
             <div class="input-wrapper" fxLayout="row" fxLayoutAlign="center center">
               <input type="date" bazInput label="{{field.label}}" formControlName="{{field.id}}"
-                     bazSetFocus="{{field.focus}}" placeholder="dd/mm/yyyy" id="{{field.id}}" tabindex="{{i+1}}">
+                     placeholder="dd/mm/yyyy" id="{{field.id}}" tabindex="{{i+1}}">
             </div>
             <ng-container *ngFor="let val of field.validations" validation>
               <baz-error *ngIf="formInstance.get( field.id ).hasError( val.type )">{{val.message}}</baz-error>
             </ng-container>
           </baz-form-field>
         </baz-date>
-      </ng-container> -->
+      </ng-container>
 
       <ng-container *ngIf="showField(field, 'checkbox')">
         <baz-checkbox [name]="field.id" [group]="formInstance" [label]="field.label"

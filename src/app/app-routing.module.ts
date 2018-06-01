@@ -9,6 +9,7 @@ import { BazCommonModule } from './common/BazCommon.module';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
+import { ListsComponent } from './pages/lists/lists.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'sub-category',
     component: SubCategoryComponent
+  },
+  {
+    path: 'lists',
+    component: ListsComponent
   }
 ];
 
@@ -34,7 +39,8 @@ const routes: Routes = [
   declarations: [
     WelcomeComponent,
     CategoryComponent,
-    SubCategoryComponent
+    SubCategoryComponent,
+    ListsComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +51,8 @@ const routes: Routes = [
     RouterModule,
     WelcomeComponent,
     CategoryComponent,
-    SubCategoryComponent
+    SubCategoryComponent,
+    ListsComponent
   ]
 })
 export class AppRoutingModule { }
