@@ -13,6 +13,7 @@ import * as formConfig from '../../config';
 export class WelcomeComponent implements OnInit {
   formInstance: FormGroup;
   fields: any[];
+  wizardFlag = false;
   @HostBinding( 'class.fxFlex' ) true;
 
   // get formgroup reference
