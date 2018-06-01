@@ -1,0 +1,48 @@
+<form [formGroup]="formInstance" novalidate  autocomplete="off" class="form">
+    <ng-container *ngFor="let field of fields; let i = index">
+
+      <ng-container  *ngIf="showField(field, 'input')">
+        <baz-form-field>
+          <div class="input-wrapper" fxLayout="row" fxLayoutAlign="center center" [ngClass]="{ hasPrefix: true }">
+            <div class="prefix" *ngIf="field.prefix">{{ field.prefix }}</div>
+            <input type="{{field.type}}" bazInput label="{{field.label}}"
+                   formControlName="{{field.id}}" maxlength="{{field.maxLength}}" id="{{field.id}}" tabindex="{{i+1}}"
+                   subHeading="{{field.subHeading}}" autocomplete="noautocomplete" id="{{field.id}}">
+          </div>
+          <ng-container *ngFor="let val of field.validations" validation>
+            <baz-error *ngIf="checkError( field.id, val.type )">{{val.message}}</baz-error>
+          </ng-container>
+        </baz-form-field>
+      </ng-container>
+
+
+      <ng-container *ngIf="field.control === 'hidden'">
+          <input type="hidden" formControlName="{{field.id}}" id="{{field.id}}">
+      </ng-container>
+
+
+
+      <!-- <ng-container *ngIf="field.control === 'date'">
+        <baz-date [name]="field.id" [group]="formInstance">
+          <baz-form-field>
+            <div class="input-wrapper" fxLayout="row" fxLayoutAlign="center center">
+              <input type="date" bazInput label="{{field.label}}" formControlName="{{field.id}}"
+                     bazSetFocus="{{field.focus}}" placeholder="dd/mm/yyyy" id="{{field.id}}" tabindex="{{i+1}}">
+            </div>
+            <ng-container *ngFor="let val of field.validations" validation>
+              <baz-error *ngIf="formInstance.get( field.id ).hasError( val.type )">{{val.message}}</baz-error>
+            </ng-container>
+          </baz-form-field>
+        </baz-date>
+      </ng-container> -->
+
+      <ng-container *ngIf="showField(field, 'checkbox')">
+        <baz-checkbox [name]="field.id" [group]="formInstance" [label]="field.label"
+                      (change)="field.onChange" tabindex="{{i+1}}"></baz-checkbox>
+      </ng-container>
+
+
+
+
+    </ng-container>
+  </form>

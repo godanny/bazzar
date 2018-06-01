@@ -1,0 +1,15 @@
+@require '../../../../assets/styles/variables.styl';
+
+:host
+  display                   block
+  .checkbox
+    margin-top              20px
+    margin-bottom           20px
+    input[type='checkbox']
+      margin-right          15px
+      border-radius         0 !important
+
+    &.has-error
+      color                 $color-error
+    label
+      user-select           none

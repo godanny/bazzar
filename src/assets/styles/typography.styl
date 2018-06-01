@@ -1,0 +1,23 @@
+@require 'responsive.styl'
+
+$primary-font                  = 'Roboto-Regular', sans-serif
+$primary-font-bold             = 'Roboto-Bold', sans-serif
+$primary-font-demi             = 'Roboto-Medium', sans-serif
+$primary-font-light            = 'Roboto-Light', sans-serif
+$primary-font-medium           = 'Roboto-Medium', sans-serif
+$font-size-base                = 16px
+
+default-font()
+  font-family                   $primary-font
+  font-size                     $font-size-base // = 1em
+  color                         $color-charcoal
+  letter-spacing                .5px
+
+  +at(1)
+    font-size       $font-size-base
+  +at(2)
+    font-size       $font-size-base
+  +at(3)
+    font-size       $font-size-base
+  +at(4)
+    font-size       $font-size-base

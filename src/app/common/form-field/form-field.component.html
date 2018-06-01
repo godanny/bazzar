@@ -1,0 +1,13 @@
+<div class="baz-form-field-wrapper" [class.has-error]="hasError()">
+    <label *ngIf="hasLabel()" class="baz-input-placeholder">{{_control.label}}</label>
+    <p *ngIf="hasSubHeading()">{{_control.subHeading}}</p>
+    <div class="baz-input-infix">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="baz-error-wrapper" [ngSwitch]="_getDisplayedMessages()">
+      <div [@errorMessages]="animationState" *ngSwitchCase="'error'">
+        <ng-content select="[validation]"></ng-content>
+      </div>
+    </div>
+  </div>

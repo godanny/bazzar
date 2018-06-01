@@ -1,0 +1,63 @@
+@require '../../../assets/styles/variables.styl';
+@require '../../../assets/styles/typography.styl';
+
+:host
+  display                   block
+  margin-bottom             25px
+  // &:last-of-type
+  //   margin-bottom           0
+
+  .baz-form-field-wrapper
+    position                relative
+    *
+      box-sizing            border-box
+
+
+
+    label.baz-input-placeholder
+      color                 inherit
+      display               flex
+      font-weight           300
+      margin-bottom         5px
+      font-family           $primary-font-demi
+
+    .baz-input-infix
+      border-radius         0
+      color                 $color-grey-border
+      border                1px solid
+      // padding               7px 11px
+      transition            border-color .3s ease-in-out
+      height                60px
+      ::ng-deep.input-wrapper
+        position            relative
+        height              100%
+        .prefix
+          position          absolute
+          left              0
+          top               50%
+          transform         translateY(-50%)
+          color             $color-charcoal
+          padding           0 0 0 15px
+        &.hasPrefix input
+          padding-left      30px !important
+
+    .baz-input-validation
+      margin-top            5px
+      color                 red
+
+    .baz-error-wrapper
+      position              absolute
+      overflow              hidden
+      width                 100%
+      margin-top            3px
+      color                 $color-error
+      font-size             12px
+
+
+    baz-error
+      display               block
+
+
+    &.has-error
+      .baz-input-infix
+        border-color        $color-error

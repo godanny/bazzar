@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@require 'assets/styles/responsive.styl'; // load first
+@require 'assets/styles/fonts.styl';
+@require 'assets/styles/variables.styl';
+@require 'assets/styles/typography.styl';
+@require 'assets/styles/text-types.styl';
+
+*
+  box-sizing                                border-box
+
+html,
+body
+  height                                    100%
+  width                                     100%
+  padding                                   0
+  margin                                    0
+  &.modal-opened
+  &.locked
+    overflow                                 hidden
+
+.container
+  margin                                    0 auto
+  width                                     100%
+
+  +to-width(3)
+    padding                                 0 30px
+  +from-width(4)
+    width                                   940px
+
+.fxFlex
+  flex                                      1 1 auto
+  box-sizing                                border-box
+
+[hidden]
+  display none !important

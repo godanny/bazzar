@@ -1,0 +1,4 @@
+<div fxLayout="row" class="checkbox" fxLayoutAlign.gt-xs="start center" fxLayoutAlign="start start" [formGroup]="group" [class.has-error]="hasError()">
+  <input type="checkbox" bazInput formControlName="{{name}}" value="1" name="{{name}}" id="{{name}}" tabindex="{{tabindex}}"/>
+  <label for={{name}}>{{label}}</label>
+</div>

@@ -1,0 +1,29 @@
+<div class="jumbotron" *ngIf="!wizardFlag">
+  <h1 class="display-4">iBazaar</h1>
+  <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <hr class="my-4">
+  <p>Use the wizard to create a data to the backend store</p>
+  <button class="btn btn-primary btn-lg" (click)="doSubmit()">Start wizard</button>
+
+</div>
+
+<div *ngIf="wizardFlag" fxLayout="column" fxLayoutAlign="center center">
+  <form>
+    <h3 fxFlex class="text-primary">What do you want to do?</h3>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="categoryId" id="referral" value="referral">
+      <label class="form-check-label" for="referral">
+        Referral
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="categoryId" id="Special" value="Special">
+      <label class="form-check-label" for="Special">
+        Special
+      </label>
+    </div>
+    <div class="controls" fxLayout="column" fxLayoutAlign="center end">
+      <button class="btn btn-primary brn" (click)="doSubmit()">Next</button>
+    </div>
+  </form>
+</div>
