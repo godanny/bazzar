@@ -8,6 +8,7 @@ import { BazCommonModule } from './common/BazCommon.module';
 
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 
 const routes: Routes = [
   {
@@ -22,13 +23,18 @@ const routes: Routes = [
   {
     path: 'category',
     component: CategoryComponent
+  },
+  {
+    path: 'sub-category',
+    component: SubCategoryComponent
   }
 ];
 
 @NgModule( {
   declarations: [
     WelcomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    SubCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +44,8 @@ const routes: Routes = [
   exports: [
     RouterModule,
     WelcomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    SubCategoryComponent
   ]
 })
 export class AppRoutingModule { }

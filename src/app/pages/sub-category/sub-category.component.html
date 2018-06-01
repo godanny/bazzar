@@ -1,0 +1,22 @@
+<div fxLayout="column" fxFlex>
+
+  <div class="wrapper" fxLayout="column" >
+    <div class="container" fxLayout="column" >
+      <h1>Sub Categories</h1>
+    </div>
+    <div class="form-container" fxLayout="column" >
+      <div class="container">
+        <div class="form" fxFlex.gt-xs="70">
+          <baz-form-group [fields]="fields"></baz-form-group>
+
+          <div class="controls" fxLayout="row" fxLayoutAlign="space-between center">
+              <button className="btn btn-link" (click)="goBack()" tabindex="{{fields.length+2}}">Previous</button>
+              <button className="btn btn-primary" (click)="doSubmit()" tabindex="{{fields.length+1}}">Next</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,16 @@
-import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { FormGroup } from '@angular/forms';
 import { FormGroupComponent } from './../../common/form-group/form-group.component';
+import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
+
 import * as formConfig from '../../config';
 
 @Component({
-  selector: 'baz-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.styl']
+  selector: 'baz-sub-category',
+  templateUrl: './sub-category.component.html',
+  styleUrls: ['./sub-category.component.styl']
 })
-export class CategoryComponent implements OnInit {
+export class SubCategoryComponent implements OnInit {
   @HostBinding( 'class.fxFlex' ) true;
 
   @ViewChild( FormGroupComponent )
@@ -22,10 +22,10 @@ export class CategoryComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.fields = formConfig.categoryForm;
+    this.fields = formConfig.subCategoryForm;
   }
 
-  doSubmit(): any {
+  doSubmit(): Promise<boolean> {
     console.log(this.formGroupComponent.formInstance.value);
     this.validateForm();
 
@@ -35,8 +35,8 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  goBack(): void {
-    this.router.navigate( [ 'welcome' ] );
+  goBack(): Promise<boolean> {
+    return this.router.navigate( [ 'category' ] );
   }
 
   private validateForm(): void {
