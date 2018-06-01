@@ -12,6 +12,19 @@ import { alphanumeric,
   required
 } from './../common/form-group/validation-messages';
 
+export const welcomeForm = [
+  {
+    id: 'category Type',
+    control: 'select',
+    label: 'Category type',
+    options: [
+      { value: 'Special', label: 'Special' },
+      { value: 'Referral', label: 'Referral' },
+    ],
+    validations: [ required ]
+  }
+];
+
 export const categoryForm = [
   {
     id: 'CatType',

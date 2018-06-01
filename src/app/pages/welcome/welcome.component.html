@@ -3,27 +3,31 @@
   <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
   <hr class="my-4">
   <p>Use the wizard to create a data to the backend store</p>
-  <button class="btn btn-primary btn-lg" (click)="doSubmit()">Start wizard</button>
+  <button class="btn btn-primary btn-lg" (click)="wizardFlag=!wizardFlag">Start wizard</button>
 
 </div>
 
-<div *ngIf="wizardFlag" fxLayout="column" fxLayoutAlign="center center">
-  <form>
-    <h3 fxFlex class="text-primary">What do you want to do?</h3>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="categoryId" id="referral" value="referral">
-      <label class="form-check-label" for="referral">
-        Referral
-      </label>
+<div *ngIf="wizardFlag" fxLayout="column" fxFlex>
+  <div fxLayout="column" fxFlex>
+
+    <div class="wrapper" fxLayout="column" >
+      <div class="container" fxLayout="column" >
+        <h1>Categories</h1>
+      </div>
+      <div class="form-container" fxLayout="column" >
+        <div class="container">
+          <div class="form" fxFlex.gt-xs="70">
+            <baz-form-group [fields]="fields"></baz-form-group>
+
+            <div class="controls" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- <button className="btn btn-link" (click)="goBack()" tabindex="{{fields.length+2}}">Previous</button> -->
+                <button className="btn btn-primary" (click)="doSubmit()" tabindex="{{fields.length+1}}">Next</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="categoryId" id="Special" value="Special">
-      <label class="form-check-label" for="Special">
-        Special
-      </label>
-    </div>
-    <div class="controls" fxLayout="column" fxLayoutAlign="center end">
-      <button class="btn btn-primary brn" (click)="doSubmit()">Next</button>
-    </div>
-  </form>
+  </div>
 </div>

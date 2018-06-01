@@ -20,6 +20,20 @@
           <input type="hidden" formControlName="{{field.id}}" id="{{field.id}}">
       </ng-container>
 
+      <ng-container *ngIf="field.control === 'select'">
+        <baz-form-field>
+          <div class="input-wrapper" fxLayout="row" fxLayoutAlign="center center">
+            <select bazInput label="{{field.label}}" formControlName="{{field.id}}" id="{{field.id}}" tabindex="{{i+1}}">
+              <option value="null" disabled="true" [selected]="!field.value">Please select</option>
+              <option *ngFor="let option of field.options" value="{{option.value}}">{{option.label}}</option>
+            </select>
+          </div>
+          <ng-container *ngFor="let val of field.validations" validation>
+              <baz-error *ngIf="formInstance.get( field.id ).hasError( val.type )">{{val.message}}</baz-error>
+            </ng-container>
+        </baz-form-field>
+      </ng-container>
+
 
 
       <!-- <ng-container *ngIf="field.control === 'date'">
