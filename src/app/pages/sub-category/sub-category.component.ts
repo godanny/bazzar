@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormGroupComponent } from './../../common/form-group/form-group.component';
 import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
-import * as formConfig from '../../config';
+import { subCategoryForm } from '../../config/forms';
 
 @Component({
   selector: 'baz-sub-category',
@@ -16,13 +16,13 @@ export class SubCategoryComponent implements OnInit {
   @ViewChild( FormGroupComponent )
   private formGroupComponent: FormGroupComponent;
 
-  formInstance: FormGroup;
-  fields: any[];
+  public formInstance: FormGroup;
+  public fields: any[];
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.fields = formConfig.subCategoryForm;
+    this.fields = subCategoryForm;
   }
 
   doSubmit(): Promise<boolean> {
