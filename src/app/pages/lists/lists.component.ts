@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormGroupComponent } from './../../common/form-group/form-group.component';
 import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
-import { listsForm } from '../../config/forms';
+import { listsForm } from '../../config';
 
 @Component({
   selector: 'baz-lists',

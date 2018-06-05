@@ -1,0 +1,59 @@
+import { Validators } from '@angular/forms';
+import { alphanumeric,
+   addressCapture,
+   checkboxRequired,
+   date,
+   email,
+   emailPattern,
+   max,
+   maxDate,
+   min,
+   minDate,
+   phone,
+  required
+} from './../../common/form-group/validation-messages';
+
+
+export const subCategoryForm = [
+  {
+    id: 'CategoryId',
+    label: 'Category Id',
+    control: 'input',
+    type: 'text',
+    value: '',
+    validations: [ required ],
+  },
+  {
+    id: 'CategorySubId',
+    label: 'Sub Category Id',
+    control: 'input',
+    type: 'text',
+    value: '',
+    validations: [ required ],
+  },
+  {
+    id: 'CategorySubName',
+    label: 'Sub Category Name',
+    control: 'input',
+    type: 'text',
+    value: '',
+    validations: [ required ],
+  },
+  {
+    id: 'OrderNo',
+    label: 'Display order',
+    control: 'input',
+    type: 'number',
+    value: '',
+    validations: [ required ],
+  },
+  {
+    id: 'Active',
+    label: 'Publish this Sub Category live?',
+    control: 'checkbox',
+    type: 'checkbox',
+    value: '',
+    validations: [],
+  }
+
+];

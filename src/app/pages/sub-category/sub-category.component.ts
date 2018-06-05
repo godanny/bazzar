@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormGroupComponent } from './../../common/form-group/form-group.component';
 import { Component, OnInit, HostBinding, ViewChild } from '@angular/core';
 
-import { subCategoryForm } from '../../config/forms';
+import { subCategoryForm } from '../../config';
 
 @Component({
   selector: 'baz-sub-category',
