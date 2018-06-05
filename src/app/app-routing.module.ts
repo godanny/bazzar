@@ -10,6 +10,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 import { ListsComponent } from './pages/lists/lists.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'lists',
     component: ListsComponent
+  },
+  {
+    path: 'details',
+    component: DetailsComponent
   }
 ];
 
@@ -40,7 +45,8 @@ const routes: Routes = [
     WelcomeComponent,
     CategoryComponent,
     SubCategoryComponent,
-    ListsComponent
+    ListsComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,
