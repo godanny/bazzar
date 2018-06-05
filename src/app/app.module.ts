@@ -16,6 +16,10 @@ import { FooterComponent } from './common/footer/footer.component';
 import { FormGroupComponent } from './common/form-group/form-group.component';
 import { FormFieldComponent } from './common/form-field/form-field.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
+
+import { environment } from '../environments/environment';
 
 @NgModule( {
   declarations: [
@@ -27,9 +31,11 @@ import { FormFieldComponent } from './common/form-field/form-field.component';
     AppRoutingModule,
     FlexLayoutModule,
     NgbModule.forRoot(),
-    BazCommonModule
+    BazCommonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence()
   ],
-  providers: [],
+  providers: [ AngularFirestore ],
   bootstrap: [AppComponent]
 } )
 export class AppModule { }
