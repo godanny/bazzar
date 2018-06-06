@@ -1,0 +1,77 @@
+<div fxLayout="column" class="collapse" [formGroup]="group" [class.has-error]="hasError()">
+  <label for={{name}}>{{label}}</label>
+
+  <div class="panel-container">
+
+    <div class="panel-show" *ngIf="group.value.Sections">
+        <!-- <pre> {{ i  }}</pre> -->
+          <data-table
+          [title]="'Sections'"
+          [items]="panels"
+          [itemCount]="dataCount"
+          [pageLimits]="limits"
+          [pagination]="false"
+          (reload)="reloadItems($event)"
+          (rowClick)="rowClick($event)"
+          (rowDoubleClick)="rowDoubleClick($event)"
+          [rowTooltip]="rowTooltip" >
+          <data-table-column
+              [property]="'SectionOrder'"
+              [header]="'Section Order'"
+              [sortable]="true"
+              [resizable]="true">
+          </data-table-column>
+          <data-table-column
+              [property]="'SectionType'"
+              [header]="'Section Type'"
+              [sortable]="true"
+              [resizable]="true">
+          </data-table-column>
+          <data-table-column
+              property="SectionTitle"
+              header="Section Title"
+              [sortable]="true"
+              [resizable]="true">
+          </data-table-column>
+          <data-table-column
+              [property]="'Mandatory'"
+              [header]="'Mandatory'"
+              [width]="100"
+              [resizable]="true">
+              <!-- <ng-template #dataTableHeader let-item="item">
+                  <span style="color: rgb(232, 0, 0)">Active</span>
+              </ng-template>
+              <ng-template #dataTableCell let-item="item">
+                  <span style="color: grey">
+                  <span class="fa fa-check" *ngIf="item.active"></span>
+                  <span class="fa fa-times" *ngIf="!item.active"></span>
+                  </span>
+              </ng-template> -->
+          </data-table-column>
+      </data-table>
+    </div>
+
+    <div class="panel-show" *ngIf="group.value.Sections.length === 0 && !isAdded">
+        No Section added. Please add one by clicking 'add' button.
+    </div>
+
+    <div class="panel-add" *ngIf="isAdded" [@enterAnimation]>
+      <baz-form-group [fields]="items"></baz-form-group>
+    </div>
+
+
+    <div class="actions" fxLayoutAlign="end end" fxLayoutGap="5px">
+      <ng-container *ngIf="!isAdded">
+        <button class="add" (click)="doAdd()">Add</button>
+        <!-- <button class="edit">Edit</button>
+        <button class="delete">Delete</button> -->
+      </ng-container>
+      <ng-container *ngIf="isAdded" [@enterAnimation]>
+        <button class="save" (click)="doSave()">Save</button>
+      </ng-container>
+
+    </div>
+  </div>
+
+  <!-- <baz-form-group [fields]="items"></baz-form-group> -->
+</div>

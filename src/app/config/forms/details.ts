@@ -44,42 +44,43 @@ export const detailsForm = [
   {
     id: 'Sections',
     label: 'Sections',
-    control: 'colapse',
+    control: 'collapse',
     items: [
       {
         id: 'SectionOrder',
-        lable: 'Section Order',
+        label: 'Section Order',
         control: 'input',
         type: 'number',
-        value: '',
+        value: '0',
         validations: [ required ]
       },
       {
         id: 'SectionType',
-        lable: 'Section Type',
+        label: 'Section Type',
         control: 'select',
         options: [
           { value: 'SALE', label: 'SALE' },
           { value: 'DELIVERY', label: 'DELIVERY' },
           { value: 'FULLDETAIL', label: 'FULLDETAIL' },
         ],
+        value: 'SALE',
         validations: [ required ]
       },
       {
         id: 'SectionTitle',
-        lable: 'Section Title',
+        label: 'Section Title',
         control: 'input',
         type: 'text',
-        value: '',
+        value: 'Summa details',
         validations: [ required ]
       },
       {
         id: 'Mandatory',
-        lable: 'Is mandatory',
+        label: 'Is mandatory',
         control: 'checkbox',
         type: 'checkbox',
-        value: '',
-        validations: [ required ]
+        value: true,
+        validations: [ checkboxRequired ]
       },
     ]
   },
@@ -90,7 +91,7 @@ export const detailsForm = [
     items: [
       {
         id: 'SectionOrder',
-        lable: 'Section Order',
+        label: 'Section Order',
         control: 'input',
         type: 'number',
         value: '',
@@ -98,7 +99,7 @@ export const detailsForm = [
       },
       {
         id: 'ItemOrder',
-        lable: 'Item Order',
+        label: 'Item Order',
         control: 'input',
         type: 'number',
         value: '',
@@ -106,7 +107,7 @@ export const detailsForm = [
       },
       {
         id: 'ItemTitle',
-        lable: 'Item Title',
+        label: 'Item Title',
         control: 'input',
         type: 'text',
         value: '',
@@ -114,7 +115,7 @@ export const detailsForm = [
       },
       {
         id: 'ItemValue',
-        lable: 'Item Title',
+        label: 'Item Title',
         control: 'input',
         type: 'number',
         value: '',
@@ -122,7 +123,7 @@ export const detailsForm = [
       },
       {
         id: 'Maximum',
-        lable: 'Maximum',
+        label: 'Maximum',
         control: 'input',
         type: 'number',
         value: '',
@@ -130,7 +131,7 @@ export const detailsForm = [
       },
       {
         id: 'ItemType',
-        lable: 'Item Type',
+        label: 'Item Type',
         control: 'select',
         options: [
           { value: 'SALE', label: 'SALE' },
@@ -142,7 +143,7 @@ export const detailsForm = [
       },
       {
         id: 'ItemSelected',
-        lable: 'Item Selected',
+        label: 'Item Selected',
         control: 'input',
         type: 'number',
         value: '',

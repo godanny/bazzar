@@ -56,6 +56,12 @@
       </ng-container>
 
 
+      <ng-container *ngIf="showField(field, 'collapse')">
+          <baz-collapse [name]="field.id" [group]="formInstance" [label]="field.label" [sections]="field.Sections"
+          (change)="field.onChange" tabindex="{{i+1}}" [items]="field.items"></baz-collapse>
+      </ng-container>
+
+
 
 
     </ng-container>
